@@ -38,6 +38,9 @@ In caffe pooling and conv. operations are treated differently for output spatial
 - For conv. output size is ` top_size = floor((bottom_size + 2*pad - kernel_size) / stride) + 1`
 - https://github.com/BVLC/caffe/issues/1318
 
+## Caffe python layers with preloading
+- https://stackoverflow.com/questions/48057841/how-to-write-a-caffe-python-data-layer-with-preload/48065550#48065550
+
 ## Anaconda environments and running spyder ## 
 - https://conda.io/docs/using/envs.html#change-environments-activate-deactivate
 - http://stackoverflow.com/questions/30170468/how-to-run-spyder-in-virtual-environment
@@ -126,6 +129,9 @@ http://web.engr.oregonstate.edu/~rubinma/Mines_274/Content/Slides/05_compilation
 ## Codec for video compression in virtualdub
 - https://www.videohelp.com/software/ffdshow
 
+## Number representation explained
+https://www.ntu.edu.sg/home/ehchua/programming/java/DataRepresentation.html
+
 ## Python
 
 Matplotlib remove whitespace in a figure (Domagoj):
@@ -133,6 +139,9 @@ Matplotlib remove whitespace in a figure (Domagoj):
 
 scipy.misc.imresize float/uint8 problem:
 - https://github.com/scipy/scipy/issues/4458
+
+Differences between map, apply, map_async, apply_async or multiprocessing
+- http://blog.shenwei.me/python-multiprocessing-pool-difference-between-map-apply-map_async-apply_async/
 
 ## error: Unable to find vcvarsall.bat ##
 
@@ -145,6 +154,9 @@ You can also install visual studio 2015 and should fix the problem.
 ## Ubuntu batch rename files
 
 - `for f in *.png; do mv "$f" "${f#image}"; done` (in this example rename all *.png removing 'image' from their name)
+
+## Ubuntu split text file up 
+- `https://stackoverflow.com/questions/2016894/how-to-split-a-large-text-file-into-smaller-files-with-equal-number-of-lines`
 
 ## Ubuntu find out disk space
 
@@ -159,6 +171,12 @@ If you mount a network filesystem and the folders when mounted are empty or you 
 
 https://askubuntu.com/questions/525243/why-do-i-get-wrong-fs-type-bad-option-bad-superblock-error
 
-## Tensorflow windows cupti dll missing for tracing
-- When you use CUDA 8.0, the file cupti64_80.dll lies in C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\extras\CUPTI\libx64. I just fixed the problem by copying the dll into C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin, and the file cupti.lib in the same location into C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\x64. And it works!
+You may need to do `sudo mount -a` to enter passwords for network drives.
+
+## Tensorflow windows/ubuntu cupti dll/so missing for tracing
+Windows
+- When using CUDA 8.0, the file cupti64_80.dll lies in `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\extras\CUPTI\libx64`. I fixed the problem by copying the dll into `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin`, and the file `cupti.lib` in the same location into `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\x64`. And it works!
+
+Ubuntu
+- Same issue for ubuntu, the file is located in `\usr\local\cuda-8.0\extras\CUPTO\lib64\libcupti.so.8.0` move it to `\usr\local\cuda-8.0\lib64\` 
 
